@@ -19,10 +19,5 @@ public class TimesheetConfig {
 		};
 	}
 	
-	@Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-        
-    }
 	
 }

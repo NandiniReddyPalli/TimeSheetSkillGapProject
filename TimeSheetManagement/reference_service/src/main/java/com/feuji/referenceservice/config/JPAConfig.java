@@ -18,8 +18,4 @@ public class JPAConfig {
 	        return new ModelMapper();
 	 }
 	 
-	 @Bean
-	    public RestTemplate restTemplate() {
-	        return new RestTemplate();
-	    }
 }
