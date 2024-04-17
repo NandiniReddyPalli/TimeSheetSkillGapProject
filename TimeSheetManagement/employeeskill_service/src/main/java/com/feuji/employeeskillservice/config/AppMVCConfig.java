@@ -10,30 +10,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class AppMVCConfig {
 	@Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/")
-                        .allowedOrigins("*")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowedHeaders("*");
-            }
-        };
-    }
-	 
-//
-//	  @Bean
-//	  public CorsFilter corsFilter() {
-//	    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//	    CorsConfiguration config = new CorsConfiguration();
-//	    config.addAllowedOrigin("http://localhost:4200");
-//	    config.addAllowedHeader("*");
-//	    config.addAllowedMethod("*");
-//	    source.registerCorsConfiguration("/", config);
-//	    return new CorsFilter(source);
-//	  }
-//	 
+	protected WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/").allowedMethods("*");
+			}
+		};
+	}
+
 	 @Bean
 	 public RestTemplate restTemplate()
 	 {

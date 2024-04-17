@@ -15,5 +15,5 @@
 # Docker Build Maven Stage
 FROM docker.io/library/openjdk:17
 VOLUME /tmp
-COPY target/account_service.jar account_service.jar
+COPY target/account_service.jar /account_service.jar
 ENTRYPOINT ["java","-jar","/account_service.jar"]

@@ -45,7 +45,6 @@ public class CommonReferenceDetailsController {
 	CommonReferenceDetails commonReferenceDetails;
 
 	@GetMapping("/getref/{typeName}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<List<ReferenceDetailsBean>> getReferenceTypeByName(@PathVariable String typeName) {
 		try {
 			log.info("Fetching reference details for type: {}", typeName);
